@@ -24,8 +24,10 @@ The replaced string.
 
 ## Example usage
 
-uses: frabert/replace-string-action@master
+```yaml
+uses: frabert/replace-string-action@v1
 with:
   pattern: 'Hello, (\w+)!'
   string: 'Hello, world!'
   replace-with: 'I greet you, $1!'
+```
