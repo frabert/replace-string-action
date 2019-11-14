@@ -24,7 +24,7 @@ The replaced string.
 
 ## Example usage
 
-uses: frabert/replace-string@master
+uses: frabert/replace-string-action@master
 with:
   pattern: 'Hello, (\w+)!'
   string: 'Hello, world!'
