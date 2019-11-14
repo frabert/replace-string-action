@@ -1,0 +1,18 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Test
+        uses: ./
+        id: test
+        with:
+          string: 'aasdfa/v1.0.1'
+          pattern: '[\w\d/]*v(\d+(?:\.\d+)*)'
+          replace-with: '$1'
+      - name: Check equality
+        run: '[[ "${{ steps.test.outputs.replaced }}" == "1.0.1" ]]'

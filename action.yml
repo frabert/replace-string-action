@@ -1,0 +1,22 @@
+name: 'Replace string'
+author: 'Francesco Bertolaccini'
+description: 'Use regular expressions to manipulate strings'
+inputs:
+  pattern:
+    description: 'Regular expression pattern'
+    required: true
+  string:
+    description: 'The input string'
+    required: true
+  replace-with:
+    description: 'What to replace with'
+    required: true
+outputs:
+  replaced:
+    description: 'The output string'
+runs:
+  using: 'node12'
+  main: 'index.js'
+branding:
+  icon: 'search'
+  color: gray-dark
