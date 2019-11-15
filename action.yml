@@ -11,6 +11,9 @@ inputs:
   replace-with:
     description: 'What to replace with'
     required: true
+  flags:
+    description: 'Flags to use when matching'
+    required: false
 outputs:
   replaced:
     description: 'The output string'

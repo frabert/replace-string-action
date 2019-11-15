@@ -16,6 +16,10 @@ Replaces strings with regular expressions.
 
 **Required** String to use for replacement.
 
+### `flags`
+
+Flags to use when matching. Please refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) for more information.
+
 ## Outputs
 
 ### `replaced`
