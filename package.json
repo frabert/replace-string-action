@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "test": "jest",
+    "all": "npm run lint && npm run prepare && npm run test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/frabert/replace-string-action.git"
   },
-  "keywords": [],
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "JavaScript"
+  ],
   "author": "",
   "license": "MIT",
   "bugs": {
@@ -20,5 +26,12 @@
   "dependencies": {
     "@actions/core": "^1.2.0",
     "@actions/github": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.1",
+    "jest": "^26.1.0"
   }
 }
