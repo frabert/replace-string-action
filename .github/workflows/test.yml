@@ -6,13 +6,22 @@ jobs:
     name: Test
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Test
+        uses: actions/checkout@v2
+      - name: Test 1
         uses: ./
-        id: test
+        id: test1
         with:
           string: 'aasdfa/v1.0.1'
           pattern: '[\w\d/]*v(\d+(?:\.\d+)*)'
           replace-with: '$1'
+      - name: Test 2
+        uses: ./
+        id: test2
+        with:
+          string: 'hello-world'
+          pattern: '-'
+          replace-with: ' '
       - name: Check equality
-        run: '[[ "${{ steps.test.outputs.replaced }}" == "1.0.1" ]]'
+        run: |
+          [[ "${{ steps.test1.outputs.replaced }}" == "1.0.1" ]]
+          [[ "${{ steps.test2.outputs.replaced }}" == "hello world" ]]

@@ -9,6 +9,11 @@ try {
   const regex = new RegExp(pattern, flags);
 
   core.setOutput('replaced', string.replace(regex, replaceWith));
+
+  console.log(`pattern: "${pattern}"`);
+  console.log(`string: "${string}"`);
+  console.log(`replaceWith: "${replaceWith}"`);
+  console.log(`flags: "${flags}"`);
 } catch (error) {
   core.setFailed(error.message);
 }
