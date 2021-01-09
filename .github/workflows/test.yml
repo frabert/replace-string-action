@@ -14,6 +14,8 @@ jobs:
           string: 'aasdfa/v1.0.1'
           pattern: '[\w\d/]*v(\d+(?:\.\d+)*)'
           replace-with: '$1'
+      - name: Check equality
+        run: '[[ "${{ steps.test1.outputs.replaced }}" == "1.0.1" ]]'
       - name: Test 2
         uses: ./
         id: test2
@@ -22,6 +24,4 @@ jobs:
           pattern: '-'
           replace-with: ' '
       - name: Check equality
-        run: |
-          [[ "${{ steps.test1.outputs.replaced }}" == "1.0.1" ]]
-          [[ "${{ steps.test2.outputs.replaced }}" == "hello world" ]]
+        run: '[[ "${{ steps.test2.outputs.replaced }}" == "hello world" ]]'
