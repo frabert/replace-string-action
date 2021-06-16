@@ -16,3 +16,20 @@ jobs:
           replace-with: '$1'
       - name: Check equality
         run: '[[ "${{ steps.test.outputs.replaced }}" == "1.0.1" ]]'
+  test-json:
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Test
+        uses: ./
+        id: test
+        with:
+          string: '_replace_underscores_'
+          pattern: '_'
+          replace-with: '" "'
+          flags: 'g'
+          json: true
+      - name: Check equality
+        run: '[[ "${{ steps.test.outputs.replaced }}" == " replace underscores " ]]'
