@@ -14,9 +14,6 @@ inputs:
   flags:
     description: 'Flags to use when matching'
     required: false
-  json:
-    description: 'Interprets `replace-with` as JSON data. Useful for when `replace-with` contains leading or trailing whitespace that would be trimmed away by GitHub'
-    required: false
 outputs:
   replaced:
     description: 'The output string'

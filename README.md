@@ -20,10 +20,6 @@ Replaces strings with regular expressions.
 
 Flags to use when matching. Please refer to [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) for more information.
 
-### `json`
-
-Boolean. Interprets `replace-with` as JSON data. Useful for when `replace-with` contains leading or trailing whitespace that would be trimmed away by GitHub.
-
 ## Outputs
 
 ### `replaced`
@@ -33,7 +29,7 @@ The replaced string.
 ## Example usage
 
 ```yaml
-uses: frabert/replace-string-action@v1.2
+uses: frabert/replace-string-action@v2.0
 with:
   pattern: 'Hello, (\w+)!'
   string: 'Hello, world!'
